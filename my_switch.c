@@ -30,7 +30,7 @@ PortFunctionInit(void)
 		GPIO_PORTF_LOCK_R = 0x4C4F434B;   
 		GPIO_PORTF_CR_R |= 0x01;           // allow changes to PF0
 
-    // Set the direction of PF2 (blue LED) as output
+    // Set the direction of PF1 (red LED) as output
 	  // a change
     GPIO_PORTF_DIR_R |= 0x02;
 	
