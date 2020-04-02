@@ -88,7 +88,7 @@ PortFunctionInit(void)
 		//
 		//Enable pull-up on PF0 and PF4
 		//
-		GPIO_PORTF_PUR_R |= 0x10; 
+		GPIO_PORTF_PUR_R |= 0x11; 
 
  
 }
@@ -106,10 +106,8 @@ int main(void)
     //
     while(1)
     {
-
-
 		
-				if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0)==0x00)	//SW1 is pressed
+				if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4)==0x00)	//SW1 is pressed
 					{
 						//Turn Pin 1 off
 						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00); 
@@ -129,5 +127,6 @@ int main(void)
 					LED_data^=RED_MASK;	//toggle = red LED (PF1)
 					GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, LED_data);
 					}
-				}
+
+			}
 }
