@@ -46,7 +46,6 @@
 #include "inc/tm4c123gh6pm.h"	//manually added by the programmer
 
 #define 	GREEN_MASK 	0x08
-#define 	Blue_MASK 	0x04
 #define 	RED_MASK 	0x02
 
 
@@ -78,9 +77,6 @@ PortFunctionInit(void)
     //
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1);
 	  //
-    // Enable pin PF2 for GPIOOutput
-    //
-	  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
 	  //
     // Enable pin PF3 for GPIOOutput
     //
