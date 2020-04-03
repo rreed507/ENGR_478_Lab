@@ -47,7 +47,7 @@
 
 #define 	GREEN_MASK 	0x08
 #define 	Blue_MASK 	0x04
-#define 	RED_MASK 		0x02
+#define 	RED_MASK 	0x02
 
 
 //*****************************************************************************
@@ -106,7 +106,6 @@ int main(void)
     //
     while(1)
     {
-		
 				if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4)==0x00)	//SW1 is pressed
 					{
 						//Turn Pin 1 off
@@ -117,6 +116,20 @@ int main(void)
 						LED_data^=GREEN_MASK;	//toggle = green LED (PF3)
 						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, LED_data);
 					}
+				else if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0)==0x00)	//SW1 is pressed
+					{
+
+						//Turn Pin 2 off
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00); 
+						//Turn Pin 3 off
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00); 
+						// Delay for a bit.
+						SysCtlDelay(2000000);	
+						// Toggle the LED.
+						LED_data^=RED_MASK;	//toggle = green LED (PF3)
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, LED_data);						
+						
+					}
 				else
 					{
 				  //Turn Pin 3 off
@@ -126,6 +139,16 @@ int main(void)
 					// Toggle the LED.
 					LED_data^=RED_MASK;	//toggle = red LED (PF1)
 					GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, LED_data);
+					}
+				
+				if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0)==0x01)	//SW1 is not pressed
+					{
+						//Turn Pin 1 on
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x02); 
+						//Turn Pin 2 on
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x04); 
+						//Turn Pin 3 on
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08); 
 					}
 
 			}
