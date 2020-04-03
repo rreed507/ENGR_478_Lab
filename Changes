@@ -108,6 +108,8 @@ int main(void)
     {
 				if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4)==0x00)	//SW1 is pressed
 					{
+						//Turn Pin 3 on
+						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x08)
 						//Turn Pin 1 off
 						GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00); 
 						// Delay for a bit.
@@ -128,6 +130,8 @@ int main(void)
 				else
 					{
 				  //Turn Pin 3 off
+				  //Turn Pin 1 on
+				  GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 0x02
 				  GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x00); 
 					// Delay for a bit.
 					SysCtlDelay(2000000);	
