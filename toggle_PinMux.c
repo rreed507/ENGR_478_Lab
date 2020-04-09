@@ -45,6 +45,19 @@
 #include "driverlib/gpio.h"
 #include "inc/tm4c123gh6pm.h"	//manually added by the programmer
 
+<<<<<<< HEAD
+=======
+#define 	GREEN_MASK 	0x08
+#define 	RED_MASK 	0x02
+
+
+//*****************************************************************************
+//
+//!
+//! A very simple example that toggles the on-board blue LED using PinMux for 
+//! port initialization and functions in Peripheral Driver Library for port access
+//
+>>>>>>> 4a350fb2b679053f29dc2c1b0fe047249fcdf037
 //*****************************************************************************
  uint8_t LED_data;
 void
@@ -74,11 +87,18 @@ PortFunctionInit(void)
     //
     //First open the lock and select the bits we want to modify in the GPIO commit register.
     //
+<<<<<<< HEAD
     HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
     HWREG(GPIO_PORTF_BASE + GPIO_O_CR) = 0x1;
 
     //
     //Now modify the configuration of the pins that we unlocked.
+=======
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1);
+	  //
+	  //
+    // Enable pin PF3 for GPIOOutput
+>>>>>>> 4a350fb2b679053f29dc2c1b0fe047249fcdf037
     //
     GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_0);
 		
@@ -110,6 +130,7 @@ int main(void)
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00); //Turn Pin 1 off
 				
 			}
+<<<<<<< HEAD
 			
 			else if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4)==0x00)//SW1 is pressed
 			{
@@ -130,4 +151,6 @@ int main(void)
 				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, LED_data);
 			}
     }
+=======
+>>>>>>> 4a350fb2b679053f29dc2c1b0fe047249fcdf037
 }
