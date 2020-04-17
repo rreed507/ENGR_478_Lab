@@ -23,8 +23,7 @@
 //! interrupt to toggle the on-board LED.
 //
 //*****************************************************************************
-int count = 0;
-bool start = true;
+int count = 0; //number
 
 void
 PortFunctionInit(void)
@@ -33,19 +32,19 @@ PortFunctionInit(void)
     // Enable Peripheral Clocks 
     //
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-	
+	//Enable PF4 for input
 		GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_4);
 
     //
-    // Enable pin PF2 for GPIOOutput
+    // Enable pin PF1,PF2,PF3 for GPIOOutput
     //
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_2);
 		GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1);
 		GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
-	
+		//Opening Lock to select bits to modify
 		HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
 		HWREG(GPIO_PORTF_BASE + GPIO_O_CR) = 0x01;
-		
+		//Modifying bits
 		GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_0);
 	
 		//Enable pull-up on PF4 and PF0
@@ -72,7 +71,7 @@ void Timer0A_Init(unsigned long period)
   TimerEnable(TIMER0_BASE, TIMER_A);      // enable timer0A
 }
 
-void Number(){
+void Number(){//tells the LEDs what color to change to
 
 	if (count == 0){
 	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
