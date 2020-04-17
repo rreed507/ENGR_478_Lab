@@ -73,7 +73,7 @@ void Timer0A_Init(unsigned long period)
 }
 
 void Number(){
-//word
+
 	if (count == 0){
 	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
 	GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
@@ -115,12 +115,12 @@ void Timer0A_Handler(void)
 	// acknowledge flag for Timer0A timeout
 	TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
 	//check if sw1 or sw2 has been pressed
-	count++;
+	
 	if(count==8){
 		count = 0;
 	}
 	Number();
-	
+	count++;
 }
 
 void Interrupt_Init(void)
@@ -168,10 +168,6 @@ int main(void)
 		Interrupt_Init();
 		GPIOPortF_Handler();
 	
-		if(start == true){
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, RED);
-			start = false;
-		}
 
     //initialize Timer0A and configure the interrupt
 		Timer0A_Init(period);
