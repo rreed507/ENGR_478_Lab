@@ -1,0 +1,20 @@
+Dependencies for Project 'toggle_timer_interrupt_TivaWare', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (.\startup_rvmdk.S)(0x5E98F6D4)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\TI\TM4C123--pd "__UVISION_VERSION SETA 529"--list .\startup_rvmdk.lst --xref -o .\startup_rvmdk.o --depend .\startup_rvmdk.d)
+F (..\..\..\..\driverlib\rvmdk\driverlib.lib)(0x5E4EFBDD)()
+F (.\toggle_timer_interrupt_TivaWare.c)(0x5E98FC3A)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork -I ..\..\..\.. --c99-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\TI\TM4C123-D__UVISION_VERSION="529" -Drvmdk -DPART_TM4C123GH6PM -DTM4C123GH6PM-o .\toggle_timer_interrupt_tivaware.o --omf_browse .\toggle_timer_interrupt_tivaware.crf --depend .\toggle_timer_interrupt_tivaware.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9BB318)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9BB318)
+I (toggle_timer_interrupt_TivaWare.h)(0x5E98F6D4)
+I (switch_counter_interrupt_TivaWare.h)(0x5E98F6D4)
+I (..\..\..\..\inc/hw_types.h)(0x5E4EFBDE)
+I (..\..\..\..\inc/hw_memmap.h)(0x5E4EFBDE)
+I (..\..\..\..\inc/hw_gpio.h)(0x5E4EFBDE)
+I (..\..\..\..\driverlib/sysctl.h)(0x5E4EFBDD)
+I (..\..\..\..\driverlib/pin_map.h)(0x5E4EFBDD)
+I (..\..\..\..\driverlib/gpio.h)(0x5E4EFBDD)
+I (..\..\..\..\driverlib/timer.h)(0x5E4EFBDD)
+I (..\..\..\..\driverlib/interrupt.h)(0x5E4EFBDD)
+I (..\..\..\..\inc/tm4c123gh6pm.h)(0x5E4EFBDE)
+F (.\toggle_timer_interrupt_TivaWare.h)(0x5E98F6D4)()
+F (.\switch_counter_interrupt_TivaWare.h)(0x5E98F6D4)()
